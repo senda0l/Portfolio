@@ -70,7 +70,7 @@ body {
     color: var(--text);
     display: flex;
     flex-direction: column;
-    gap: 18%;
+    gap: 15%;
     top: 10%;
     left: 10%;
 }
@@ -311,6 +311,7 @@ img.dark1.active {
 }
 
 .theme-switcher{
+    margin-left: 100px;
     width: 50px;
     height: 24px;
     position: relative;
