@@ -5,7 +5,8 @@ const switcher = document.querySelector(".slider"),
   imgs = document.querySelectorAll(".light1"),
   sections = document.querySelectorAll("section"),
   navLinks = document.querySelectorAll(".nav-link"),
-  switcherText = document.querySelector(".switcher-text");
+  switcherText = document.querySelector(".switcher-text"),
+  input = document.querySelector('.input')
 
 switcher.addEventListener("click", () => {
   body.classList.toggle("dark");
@@ -20,7 +21,11 @@ switcher.addEventListener("click", () => {
     lightimg.classList.toggle("light");
   });
 
-  switcherText.textContent='Dark Theme'
+  if(input.checked){
+    switcherText.textContent='Light Theme'
+  }else{
+    switcherText.textContent='Dark Theme';
+  }
 });
 
 const observer = new IntersectionObserver(
