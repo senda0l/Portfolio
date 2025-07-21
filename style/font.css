@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'SpaceGrotesk-Light';
+    src: url(../fonts/SpaceGrotesk-Light.ttf);
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Regular';
+    src: url(../fonts/SpaceGrotesk-Regular.ttf);
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Bold';
+    src: url(../fonts/SpaceGrotesk-Bold.ttf);
+}

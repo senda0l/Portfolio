@@ -1,0 +1,229 @@
+@import url(font.css);
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "SpaceGrotesk-Regular";
+}
+
+:root {
+    --bg: #fdfdfd; /* почти белый, но с теплотой */
+    --bg-alt: #f3f4f6; /* светло-серый блоки */
+    --text: #1f2937; /* насыщенный тёмно-серый */
+    --text-secondary: #6b7280; /* серо-фиолетовый */
+    --border: #d1d5db; /* мягкий серый */
+    --hover: #e5e7eb; /* светло-серый при наведении */
+    --accent: #6366f1; /* индиго-фиолетовый */
+    --accent-alt: #ec4899; /* розово-малиновый */
+    --bg-image:url(../img/comingsoonlight.png);
+}
+
+body.dark {
+    --bg: #0d1117; /* глубокий тёмно-синий, не просто чёрный */
+    --bg-alt: #161b22; /* чуть светлее для карточек/секций */
+    --text: #c9d1d9; /* мягкий светло-серый */
+    --text-secondary: #8b949e; /* серо-голубой */
+    --border: #30363d; /* дымчато-серый */
+    --hover: #21262d; /* тень при наведении */
+    --accent: #58a6ff; /* насыщенно-голубой (можно заменить на фиолетовый) */
+    --accent-alt: #f778ba; /* розово-лавандовый для вторичных акцентов */
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 24px;
+    margin-top: 8%;
+}
+
+body {
+    background-color: var(--bg);
+    position: relative;
+}
+
+.nav-content {
+    z-index: 1000;
+    width: 40%;
+    max-width: 100%;
+    height: 100vh;
+    position: fixed;
+    color: var(--main-txt);
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    top: 10%;
+    left: 10%;
+}
+
+h1 {
+    font-family: "SpaceGrotesk-Bold";
+    font-size: 40px;
+}
+
+.nav-subtitle {
+    font-family: "SpaceGrotesk-Regular";
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+p,
+.nav-about {
+    font-family: "SpaceGrotesk-Light";
+    text-align: justify;
+}
+span {
+    cursor: pointer;
+}
+
+span:hover {
+    color: var(--accent);
+}
+
+li {
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.nav-link {
+    color: var(--main-txt);
+    position: relative;
+    padding-left: 60px;
+    font-size: 20px;
+    font-family: "SpaceGrotesk-Regular";
+    transition: 0.3s ease;
+}
+
+.nav-link::before {
+    content: "";
+    background: var(--text);
+    height: 1px;
+    position: absolute;
+    width: 40px;
+    left: 0%;
+    top: 50%;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    padding-left: 80px;
+    color: var(--accent);
+}
+
+.nav-link:hover::before {
+    width: 60px;
+    margin-right: 20px;
+    background-color: var(--accent);
+}
+
+.nav-socials {
+    display: flex;
+    column-gap: 25px;
+}
+
+.social-link {
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 45%;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 15px;
+}
+.projects-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.projects-card {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.projects-card:hover {
+    background-color: var(--hover);
+
+}
+
+.card-titles {
+    display: flex;
+    gap: 10px;
+    transition: 0.3s;
+
+}
+
+.arrow {
+    transform: rotate(-45deg);
+    color: var(--text);
+    transition: 0.3s;
+
+}
+
+.projects-card:hover .arrow {
+    transform: rotate(-45deg) translate(5px,0px) ;
+    /* transform: rotate(-45deg); */
+    color: var(--accent);
+
+    
+}
+
+.card-title {
+    font-size: 16px;
+    transition: 0.3s;
+    color: var(--text);
+}
+
+.projects-card:hover .card-title{
+    color: var(--accent);
+}
+
+.card-text {
+    font-family: "SpaceGrotesk-Light";
+    font-size: 14px;
+}
+
+.card-left{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding-bottom: -10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.projects-card:hover .card-left{
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+img.dark1{
+    width: 0;
+    position: absolute;
+    z-index: 9;
+}
+
+img.dark1.active{
+    width: 100%;
+}
