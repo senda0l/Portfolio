@@ -6,7 +6,8 @@ const switcher = document.querySelector(".slider"),
   sections = document.querySelectorAll("section"),
   navLinks = document.querySelectorAll(".nav-link"),
   switcherText = document.querySelector(".switcher-text"),
-  input = document.querySelector('.input')
+  input = document.querySelector(".input"),
+  light = document.querySelector(".cursor-light");
 
 switcher.addEventListener("click", () => {
   body.classList.toggle("dark");
@@ -21,10 +22,10 @@ switcher.addEventListener("click", () => {
     lightimg.classList.toggle("light");
   });
 
-  if(input.checked){
-    switcherText.textContent='Light Theme'
-  }else{
-    switcherText.textContent='Dark Theme';
+  if (input.checked) {
+    switcherText.textContent = "Light Theme";
+  } else {
+    switcherText.textContent = "Dark Theme";
   }
 });
 
@@ -46,4 +47,14 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => {
   observer.observe(section);
+});
+
+
+document.addEventListener('mousemove', (e) => {
+  if (document.body.classList.contains('dark')) {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    light.style.transform = `translate3d(${x -230}px, ${y -230}px, 0)`;
+  }
 });
