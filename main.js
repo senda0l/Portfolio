@@ -2,9 +2,10 @@ const switcher = document.querySelector(".slider"),
   body = document.body,
   img = document.querySelectorAll(".dark1"),
   gmail = document.querySelector(".mail"),
-  imgs = document.querySelectorAll(".light1");
-sections = document.querySelectorAll("section");
-navLinks = document.querySelectorAll(".nav-link");
+  imgs = document.querySelectorAll(".light1"),
+  sections = document.querySelectorAll("section"),
+  navLinks = document.querySelectorAll(".nav-link"),
+  switcherText = document.querySelector(".switcher-text");
 
 switcher.addEventListener("click", () => {
   body.classList.toggle("dark");
@@ -19,6 +20,7 @@ switcher.addEventListener("click", () => {
     lightimg.classList.toggle("light");
   });
 
+  switcherText.textContent='Dark Theme'
 });
 
 const observer = new IntersectionObserver(
@@ -37,6 +39,6 @@ const observer = new IntersectionObserver(
   }
 );
 
-sections.forEach(section => {
-    observer.observe(section)
+sections.forEach((section) => {
+  observer.observe(section);
 });

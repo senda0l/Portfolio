@@ -45,9 +45,8 @@ body.dark {
     --accent-alt: #f778ba;
     /* розово-лавандовый для вторичных акцентов */
 }
-html{
+html {
     scroll-behavior: smooth;
-    
 }
 .container {
     margin: 0 auto;
@@ -116,9 +115,11 @@ li {
     transition: fill 0.3s ease;
 }
 
-.nav-link.active{
+.nav-link.active {
     color: var(--accent);
     font-weight: bold;
+    padding-left: 80px;
+
 }
 
 .nav-link::before {
@@ -130,6 +131,12 @@ li {
     left: 0%;
     top: 50%;
     transition: 0.3s ease;
+}
+
+.nav-link.active::before {
+    width: 60px;
+    margin-right: 20px;
+    background-color: var(--accent);
 }
 
 .nav-link:hover {
@@ -148,7 +155,7 @@ li {
     column-gap: 25px;
 }
 
-.social-link{
+.social-link {
     color: var(--text);
     transition: fill 0.3s ease;
 }
@@ -158,7 +165,7 @@ li {
     transform: scale(1.1);
 }
 
-.mail.active{
+.mail.active {
     fill: #0d1117;
 }
 
@@ -196,29 +203,24 @@ main {
 
 .projects-card:hover {
     background-color: var(--hover);
-
 }
 
 .card-titles {
     display: flex;
     gap: 10px;
     transition: 0.3s;
-
 }
 
 .arrow {
     transform: rotate(-45deg);
     color: var(--text);
     transition: 0.3s;
-
 }
 
 .projects-card:hover .arrow {
     transform: rotate(-45deg) translate(5px, 0px);
     /* transform: rotate(-45deg); */
     color: var(--accent);
-
-
 }
 
 .card-title {
@@ -252,8 +254,7 @@ main {
     border-radius: 10px;
 }
 
-
-.light1.light{
+.light1.light {
     height: 0px;
 }
 
@@ -286,7 +287,6 @@ img.dark1.active {
     border-radius: 10px;
     padding-bottom: 20px;
     transition: 0.3s;
-    
 }
 
 .skills-title {
@@ -299,7 +299,7 @@ img.dark1.active {
 .skills-item:hover {
     background-color: var(--hover);
 }
-.skills-item:hover .skills-title{
+.skills-item:hover .skills-title {
     color: var(--accent);
 }
 
@@ -310,21 +310,21 @@ img.dark1.active {
     color: var(--text-secondary);
 }
 
-.theme-switcher{
-    margin-left: 100px;
+.theme-switcher {
+    bottom: 50px;
     width: 50px;
     height: 24px;
     position: relative;
     display: inline-block;
 }
 
-.theme-switcher input{
+.theme-switcher input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.slider{
+.slider {
     background-color: var(--text-secondary);
     position: absolute;
     top: 0;
@@ -334,10 +334,9 @@ img.dark1.active {
     border-radius: 24px;
     cursor: pointer;
     transition: 0.3s;
-
 }
 
-.slider::before{
+.slider::before {
     position: absolute;
     content: "";
     height: 18px;
@@ -348,10 +347,17 @@ img.dark1.active {
     background: var(--bg);
     transition: 0.3s;
 }
-input:checked + .slider{
+input:checked + .slider {
     background-color: var(--text);
 }
 input:checked + .slider:before {
-  transform: translateX(26px);
+    transform: translateX(26px);
 }
 
+.switcher-text{
+    font-family: 'SpaceGrotesk-Light';
+    color: var(--text);
+    font-size: 8px;
+    text-align: center;
+    padding-top: 3px;
+}
