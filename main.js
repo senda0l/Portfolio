@@ -31,7 +31,7 @@ const theme=body.classList.contains('dark')?"dark":"light";
 localStorage.setItem("theme",theme);
 });
 
-const savedTheme = localStorage.getItem("theme") || "dark"; // по умолчанию — светлая
+const savedTheme = localStorage.getItem("theme") || "dark";
 
 if (savedTheme === "dark") {
   body.classList.add("dark");
@@ -86,11 +86,11 @@ let translations = {};
 
 async function LoadLanguage(lang) {
   try {
-    // Грузим JSON по выбранному языку
+
     const res = await fetch(`./locales/${lang}.json`);
     if (!res.ok) throw new Error(`Failed to load ${lang} translations`);
     
-    translations = await res.json();  // ОБЯЗАТЕЛЬНО вызвать json()
+    translations = await res.json();  
     applyTranslations();
     localStorage.setItem("lang", lang);
   } catch (err) {
@@ -111,11 +111,8 @@ document.getElementById("lang-switcher").addEventListener('change', (e) => {
   LoadLanguage(e.target.value);
 });
 
-// Получаем язык из localStorage или ставим по умолчанию 'en'
 const savedLang = localStorage.getItem("lang") || "en";
 
-// Устанавливаем селект в сохранённый язык
 document.getElementById("lang-switcher").value = savedLang;
 
-// Загружаем переводы при старте
 LoadLanguage(savedLang);

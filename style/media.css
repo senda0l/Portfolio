@@ -1,47 +1,19 @@
-@media (max-width: 768px) {
-  body {
+@media (max-width:768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #111;
     flex-direction: column;
-  }
-
-  .nav {
-    position: static;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1rem;
-  }
-
-  main {
-    margin-left: 0;
-    padding: 1.5rem 1rem;
-  }
-
-  section {
-    margin-bottom: 2.5rem;
-  }
+    align-items: center;
+    display: none;
 }
-
-/* Большие экраны (например, 1440px и выше) */
-@media (min-width: 1440px) {
-  main {
-    padding: 3rem 4rem;
-  }
-
-  section {
-    max-width: 1000px;
-  }
-
-  .nav {
-    width: 240px;
-    padding: 3rem 1.5rem;
-  }
-
-  .nav a {
-    font-size: 1.1rem;
-  }
-
-  body {
-    font-size: 1.1rem;
-  }
 }
+.nav-links.media {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
