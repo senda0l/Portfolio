@@ -23,11 +23,33 @@ switcher.addEventListener("click", () => {
   });
 
   if (input.checked) {
-    switcherText.textContent = "Light Theme";
-  } else {
-    switcherText.textContent = "Dark Theme";
-  }
+  switcherText.textContent = translations["switcher-light"];
+} else {
+  switcherText.textContent = translations["switcher-dark"];
+}
+const theme=body.classList.contains('dark')?"dark":"light";
+localStorage.setItem("theme",theme);
 });
+
+const savedTheme = localStorage.getItem("theme") || "dark"; // по умолчанию — светлая
+
+if (savedTheme === "dark") {
+  body.classList.add("dark");
+  input.checked = false;
+
+  gmail.classList.add("active");
+
+  img.forEach((darkimg) => {
+    darkimg.classList.add("active");
+  });
+
+  imgs.forEach((lightimg) => {
+    lightimg.classList.add("light");
+  });
+
+} 
+
+
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -58,3 +80,42 @@ document.addEventListener('mousemove', (e) => {
     light.style.transform = `translate3d(${x -230}px, ${y -230}px, 0)`;
   }
 });
+
+
+let translations = {};
+
+async function LoadLanguage(lang) {
+  try {
+    // Грузим JSON по выбранному языку
+    const res = await fetch(`./locales/${lang}.json`);
+    if (!res.ok) throw new Error(`Failed to load ${lang} translations`);
+    
+    translations = await res.json();  // ОБЯЗАТЕЛЬНО вызвать json()
+    applyTranslations();
+    localStorage.setItem("lang", lang);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function applyTranslations() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[key]) {
+      el.innerHTML = translations[key];
+    }
+  });
+}
+
+document.getElementById("lang-switcher").addEventListener('change', (e) => {
+  LoadLanguage(e.target.value);
+});
+
+// Получаем язык из localStorage или ставим по умолчанию 'en'
+const savedLang = localStorage.getItem("lang") || "en";
+
+// Устанавливаем селект в сохранённый язык
+document.getElementById("lang-switcher").value = savedLang;
+
+// Загружаем переводы при старте
+LoadLanguage(savedLang);

@@ -25,6 +25,7 @@
     /* индиго-фиолетовый */
     --accent-alt: #ec4899;
     /* розово-малиновый */
+    --switcher:#0d1117;
 }
 
 body.dark {
@@ -44,6 +45,7 @@ body.dark {
     /* насыщенно-голубой (можно заменить на фиолетовый) */
     --accent-alt: #f778ba;
     /* розово-лавандовый для вторичных акцентов */
+    --switcher:#fdfdfd;
 }
 html {
     scroll-behavior: smooth;
@@ -210,6 +212,7 @@ main {
     transition: 0.3s;
 }
 
+
 .arrow {
     transform: rotate(-45deg);
     color: var(--text);
@@ -324,7 +327,7 @@ img.dark1.active {
 }
 
 .slider {
-    background-color: var(--text-secondary);
+    background-color: var(--switcher);
     position: absolute;
     top: 0;
     left: 0;
@@ -346,11 +349,12 @@ img.dark1.active {
     background: var(--bg);
     transition: 0.3s;
 }
-input:checked + .slider {
-    background-color: var(--text);
+.theme-switcher .input:checked + .slider {
+  background-color: var(--switcher);
 }
-input:checked + .slider:before {
-    transform: translateX(26px);
+
+.theme-switcher .input:checked + .slider::before {
+  transform: translateX(26px);
 }
 
 .switcher-text {
@@ -378,4 +382,23 @@ input:checked + .slider:before {
 }
 body.dark .cursor-light {
   opacity: 1;
+}
+
+select#lang-switcher{
+    background: transparent;
+    border: none;
+    margin-top: -100px;
+    color: var(--text);
+}
+.lang-opt{
+    border: transparent;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    box-sizing: border-box;
 }

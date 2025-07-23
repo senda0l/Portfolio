@@ -1,0 +1,13 @@
+{
+  "name": "Abdugafforov Shokhrukh",
+  "major": "Front-End Developer",
+  "major-about": "Turning ideas into interactive experiences.",
+  "nav-about": "About",
+  "nav-projects": "Projects",
+  "nav-skills": "Skills",
+  "switcher-light": "Light Theme",
+  "switcher-dark": "Dark Theme",
+  "about": "I’m a passionate and self-driven front-end developer with a deep interest in beautiful UIs, smooth interactions, and clean code. My journey into web development began with a desire to create things people can actually use — now it’s my daily obsession.<br><br>I believe design isn’t just how it looks, but also how it feels and functions. I love crafting responsive, user-friendly websites that blend aesthetics with performance. Whether it’s writing semantic <span>HTML</span>, styling with modern <span>CSS</span>, or building logic with <span>JavaScript</span> — I enjoy every part of the process.<br><br>Currently, I’m focused on sharpening my React skills, learning backend fundamentals, and building projects that push me to grow. In the future, I see myself as a full-stack developer working with teams that care about accessibility, performance, and elegant design.<br><br>Outside of coding, you’ll find me sketching ideas on paper, getting inspired by great UI, or reading about tech, business, and minimalism.",
+  "Curion-title": "Finance App",
+  "Curion-text": "Curion is a modern and minimalistic web app that allows users to explore global currencies, view exchange rates, and compare values in real-time."
+}
