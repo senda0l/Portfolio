@@ -15,6 +15,12 @@
   "skill3":"Building interactivity with events and DOM manipulation.",
   "skill4":"Version control, pull requests, and collaboration using Git.",
   "skill5":"Rapid UI development with a responsive component library.",
-  "skill6":"Designing UI mockups, prototypes, and design systems."
+  "skill6":"Designing UI mockups, prototypes, and design systems.",
+  "skill7":"Building dynamic user interfaces with component-based architecture.",
+  "skill8":"Lightweight framework for creating reactive and scalable web apps.",
+  "skill9":"Utility-first CSS framework for fast and customizable UI design.",
+  "TimeTable-title":"Schedule App",
+  "TimeTable-text":"TimeTable is a modern web app that helps students easily manage, edit, and view their daily and weekly class schedules."
+                  
 
 }

@@ -303,7 +303,7 @@ img.dark1.active {
     color: var(--accent);
 }
 .skills-item:hover img{
-    transform: scale(0.9);
+    transform: scale(1);
 }
 
 .skills-text {
@@ -403,3 +403,19 @@ select#lang-switcher{
     column-gap: 50px;
     box-sizing: border-box;
 }
+img{
+    object-fit: scale-down !important;
+}
+
+.skill1 img{
+    display: inline-block;
+    transform: scale(0.8);
+}.skill6 img{
+    display: inline-block;
+    transform: scale(0.9);
+}.skill5 img{
+    display: inline-block;
+    transform: scale(0.8);
+}
+
+
